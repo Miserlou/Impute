@@ -2,7 +2,6 @@
 \docType{data}
 \alias{khanmiss}
 \title{Khan microarray data with random missing values}
-A text file containing the Khan micorarray data with random missing values introduced}
 \description{ A text file containing the Khan micorarray data with
   random missing values introduced for illustrative purposes}
 \usage{
