@@ -6,3 +6,5 @@ Description: Imputation for microarray data (currently KNN only)
 Maintainer: Balasubramanian Narasimhan <naras@stat.Stanford.EDU>
 Depends: R (>= 1.7.0)
 License: GPL2.0
+ReleaseLevel: devel
+
