@@ -1,5 +1,5 @@
 "impute.knn" <-
-  function (data, k = 10,rowmax=0.5,colmax=0.8,maxp=1500, rng.seed=362436069) 
+  function (data, k = 10,rowmax=0.5,colmax=0.8,maxp=1500, rng.seed=362436069)
 {
   rng.state <- NULL
   if (exists(".Random.seed")) {
@@ -13,12 +13,12 @@
   if (any(col.nas>colmax*p)) {
     stop(paste("a column has more than",format(round(colmax*100)),"% missing values!"))
   }
-  
+
   x <- knnimp(x,k,maxmiss=rowmax,maxp=maxp)
-  
+
   return(list(data = x, rng.seed=rng.seed, rng.state=rng.state))
 }
-  
+
 knnimp<-function(x,k=10,maxmiss=0.5,maxp=1500){
   pn<-dim(x)
   dn<-dimnames(x)
@@ -64,7 +64,7 @@ knnimp<-function(x,k=10,maxmiss=0.5,maxp=1500){
   dimnames(ximp)<-dn
   ximp
 }
-           
+
 
 knnimp.internal<-function(x,k,imiss,irmiss,p,n,maxp=maxp){
   if(p<=maxp){
@@ -79,7 +79,7 @@ knnimp.internal<-function(x,k,imiss,irmiss,p,n,maxp=maxp){
                    double(p),
                    double(n),
                    integer(p),
-                   integer(n))
+                   integer(n), PACKAGE="impute")
     ximp<-junk$ximp
 ### Should we check or iterate?
     ximp[junk$imiss==2]<-NA
@@ -121,19 +121,20 @@ mean.miss<-function(x,index=seq(p),imiss=is.na(x)){
            imiss0=as.integer(rep(1,n)),
            imiss,
            index,
-           as.integer(length(index))
+           as.integer(length(index)),
+           PACKAGE="impute"
            )
   x0<-junk$x0
   x0[junk$imiss0==2]<-NA
 x0
 }
-           
+
 meanimp<-function(x,imiss=is.na(x),xbar=mean.miss(x,imiss=imiss)){
   nr<-nrow(x)
   if(!is.null(nr)&&(nr>1))x[imiss]<-outer(rep(1,nr),xbar)[imiss]
   x
 }
-                                         
+
 "twomeans.miss" <-
 function(x, imiss=is.na(x),imbalance=.2,maxit=5,eps=0.001){
   ### Compute the two-means cluster solution for data with missing
@@ -159,7 +160,7 @@ function(x, imiss=is.na(x),imbalance=.2,maxit=5,eps=0.001){
                  ratio=double(1),
                  iter=integer(1),
                  integer(p),
-                 integer(n)
+                 integer(n), PACKAGE="impute"
                )
 
   clus=matrix(junk$cluster,ncol=2)
