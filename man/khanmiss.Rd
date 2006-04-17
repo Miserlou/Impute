@@ -34,8 +34,8 @@ profiling and artificial neural network. Nature Medicine 7, 673-679.
   Diagnosis of multiple cancer types by shrunken centroids of gene expression
   PNAS 99: 6567-6572.   Available at www.pnas.org
 }
-\example{
-  data{khanmiss}
+\examples{
+  data(khanmiss)
 }
  
 \keyword{datasets}
