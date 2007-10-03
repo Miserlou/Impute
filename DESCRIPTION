@@ -1,6 +1,6 @@
 Package: impute
 Title: impute: Imputation for microarray data
-Version: 1.9.0
+Version: 1.10.0
 Author: Trevor Hastie, Robert Tibshirani, Balasubramanian Narasimhan,
         Gilbert Chu
 Description: Imputation for microarray data (currently KNN only)
