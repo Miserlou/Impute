@@ -61,11 +61,11 @@ impute.knn(data ,k = 10, rowmax = 0.5, colmax = 0.8, maxp = 1500, rng.seed=36243
 }
 
 \value{
-  \item{data} {the new imputed data matrix}
-  \item{rng.seed} {the rng.seed that can be used to
+  \item{data}{the new imputed data matrix}
+  \item{rng.seed}{the rng.seed that can be used to
     reproduce the imputation. This should be saved by any prudent user
     if different from the default.}
-  \item{rng.state} {the state of the random number generator, if
+  \item{rng.state}{the state of the random number generator, if
     available, prior to the call to \code{set.seed}. Otherwise, it is
     \code{NULL}. If necessary, this can be used in the calling code to
     undo the side-effect of changing the random number generator
