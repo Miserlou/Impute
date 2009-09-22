@@ -72,6 +72,10 @@ impute.knn(data ,k = 10, rowmax = 0.5, colmax = 0.8, maxp = 1500, rng.seed=36243
     sequence.} 
 }
 
+\note{
+     A bug in the function \code{knnimp.split} was fixed in version 1.18.0. 
+     This means that results from earlier versions may not be exactly reproducible. 
+     We apologize for this inconvenience.}
 \examples{
 data(khanmiss)
 khan.expr <- khanmiss[-1, -(1:2)]

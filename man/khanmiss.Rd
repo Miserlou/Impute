@@ -20,8 +20,6 @@
     
 }
 
-\details{}
- 
 \source{
   Khan, J.  and  Wei, J.S.  and
 Ringner, M. and  Saal, L. and  Ladanyi, M. and

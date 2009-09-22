@@ -97,7 +97,7 @@ knnimp.internal<-function(x,k,imiss,irmiss,p,n,maxp=maxp){
     for(i in seq(size)){
       p<-as.integer(size[i])
       index<-clus==i
-      x[index,]<-if(p<k)
+      x[index,]<-if(p<=k)
         meanimp(x[index,])
       else
         knnimp.internal(x[index,],k,imiss[index,],irmiss[index],p,n,maxp)
