@@ -77,8 +77,8 @@ knnimp.internal<-function(x,k,imiss,irmiss,p,n,maxp=maxp){
                    irmiss,
                    as.integer(k),
                    double(p),
-                   double(n),
-                   integer(p),
+                   double(n+k),
+                   integer(p+k),
                    integer(n), PACKAGE="impute")
     ximp<-junk$ximp
 ### Should we check or iterate?
